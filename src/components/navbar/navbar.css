@@ -1,0 +1,117 @@
+/* ####################
+NAV SECTION
+#################### */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  header .wrapper {
+    padding: 30px 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo a {
+    display: block;
+    margin-left: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #ab47bc;
+  }
+  
+  .logo a span {
+    color: #673ab7;
+  }
+  
+  header .form {
+    margin-left: 100px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  header .form input {
+    padding: 12px 12px 12px 50px;
+    width: 500px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background-color: #f6f7f9;
+    outline: none;
+  }
+  
+  
+  header .form input::placeholder {
+    color: #b4b8bb;
+    font-size: 1.1em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+  }
+  
+  header .form ion-icon {
+    position: absolute;
+    padding-left: 20px;
+    color: #b4b8bb;
+    font-size: 1.1em;
+  }
+  
+  header .a-btn a {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 5px;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #000;
+    border: 1px solid transparent;
+  }
+  
+  header .a-btn a:hover {
+    border: 1px solid #ebebeb;
+  }
+  
+  header ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  header ul  li a {
+    font-size: 1.6em;
+    position: relative;
+    color: #000;
+  }
+  
+  header ul li a span{
+    font-size: .4em;
+    display: flex;
+    position: absolute;
+    color: #fff;
+    background-color: #ff5722;
+    min-width: 20px;
+    height: 20px;
+    z-index: 99;
+    padding: 4px ;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    right: -11px;
+    top: -6px;
+    border: 2px solid #fff;
+  }
+
+  .top-bar {
+    background: #ab47bc;
+    padding: 10px;
+    color: #f6f7f9;
+    text-align: center;
+  }
+
+  .top-bar span {
+    font-weight: 800;
+}

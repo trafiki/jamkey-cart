@@ -1,0 +1,123 @@
+/* ####################
+PRODUCTS SECTION
+#################### */
+.products-filter {
+    position: relative;
+    padding: 20px 0 60px 0;
+}
+
+.products-filter h1.title{
+     font-size: 2.5em;
+     margin-bottom: 30px;
+}
+
+.products-filter .filter {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.products-filter .filter .btn-filter {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.products-filter .filter .btn-filter button {
+    padding: 10px 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    color: #fe6d4e;
+    outline: none;
+    cursor: pointer;
+}
+
+.products-filter .filter .btn-filter button.active {
+    background:  linear-gradient(45deg, #fe6d4e, #ff9170);
+    color: #fff;
+    box-shadow:  0px 10px 35px -20px #fe6d4e;
+}
+
+.range-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.range-slider h4.data{
+    color: #fe6d4e;
+    margin: 0 30px 0 10px;
+}
+
+.range-slider .range {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid #ebebeb;
+    border-radius: 50px;
+}
+
+.range input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: inherit;
+    position: absolute;
+    /* background: linear-gradient(#fe6d4e, #fe6d4e) no repeat center; */
+    /* background:  #fe6d4e; */
+    background-size: 100% 5px;
+    pointer-events: none;
+}
+
+.range input[type=range]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 50px;
+    border: 7px solid #fe6d4e;
+    background-color: #fff;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.range input[type=range]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 50px;
+    border: 7px solid #fe6d4e;
+    background-color: #fff;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.range input[type=range]:nth-child(2) {
+    background: none;
+}
+
+.products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 15px;
+}
+
+.btn-orange {
+    color: #fe6d4e !important;
+    border: 2px solid #fe6d4e !important;
+    margin-top: 2em;
+}
