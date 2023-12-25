@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './heroSection.css'
 import controller from '../../assets/controller.png'
 import zelda from "../../assets/zelda.jpg"
+import { IonIcon } from '@ionic/react'
 
 
 export default function HeroSection() {
@@ -13,7 +14,7 @@ export default function HeroSection() {
             <h1>Best deals <br /> on Jamkey</h1>
             <a href="/#shop" className="btn">
                 <span>View products</span>
-                <ion-icon name="caret-forward-outline"></ion-icon>
+                <IonIcon name="caret-forward-outline"></IonIcon> 
             </a>
         </div>
         <div className="controller-pic">
@@ -31,7 +32,7 @@ export default function HeroSection() {
                     <p>150 games</p>
                 </div>
                 <div className="grp-nav">
-                    <Link to="#"><ion-icon name="chevron-forward"></ion-icon></Link>
+                    <Link to="#"><IonIcon name="chevron-forward"></IonIcon></Link>
                 </div>
             </div>
         </div>
@@ -45,7 +46,7 @@ export default function HeroSection() {
                     <p>312 games</p>
                 </div>
                 <div className="grp-nav">
-                    <Link to="#"><ion-icon name="chevron-forward"></ion-icon></Link>
+                    <Link to="#"><IonIcon name="chevron-forward"></IonIcon></Link>
                 </div>
             </div>
         </div>
@@ -59,7 +60,7 @@ export default function HeroSection() {
                     <p>320 games</p>
                 </div>
                 <div className="grp-nav">
-                    <Link to="#"><ion-icon name="chevron-forward"></ion-icon></Link>
+                    <Link to="#"><IonIcon name="chevron-forward"></IonIcon></Link>
                 </div>
             </div>
         </div>
@@ -72,7 +73,7 @@ export default function HeroSection() {
                     <p>+25 categories</p>
                 </div>
                 <div className="grp-nav">
-                    <Link to="#"><ion-icon name="chevron-forward"></ion-icon></Link>
+                    <Link to="#"><IonIcon name="chevron-forward"></IonIcon></Link>
                 </div>
             </div>
         </div>
