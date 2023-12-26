@@ -3,6 +3,7 @@ import "./navbar.css";
 import shoppingBag from './shopping-bag.png'
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
+import { IonIcon } from "@ionic/react";
 
 export const Navbar = () => {
   const {
@@ -19,7 +20,7 @@ export const Navbar = () => {
             </div>
 
             <div className="form desktop-only">
-                <ion-icon name="search"></ion-icon>
+                <IonIcon name="search"></IonIcon>
                 <input type="text" name="" placeholder="Search" />
             </div>
             <div className="a-btn desktop-only">
@@ -28,7 +29,7 @@ export const Navbar = () => {
             </div>
             
             <ul>  
-                <li><Link to="#"><ion-icon name="heart-outline"></ion-icon></Link></li>
+                <li><Link to="#"><IonIcon name="heart-outline"></IonIcon></Link></li>
                 <li><Link to="/cart"><span>{getTotalCartCount()}</span><img style={{width: '26px'}} src={shoppingBag} /></Link></li>
             </ul>
         </div>

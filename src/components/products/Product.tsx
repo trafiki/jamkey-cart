@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 import './product.css'
+import { IonIcon } from "@ionic/react";
 
 export type ProductT = {
   id: number,
@@ -12,7 +13,7 @@ export type ProductT = {
 
 export const Product = (props: any) => {
   const { id, productName, price, productImage, category } = props;
-  const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
+  const { cartItems, addToCart} = useContext(ShopContext);
 
   const cartItemAmount = cartItems[id];
   return (
@@ -25,7 +26,7 @@ export const Product = (props: any) => {
       </div>
       <div className="add-to-cart-wrapper">
         <button className="add-to-cart" onClick={() => addToCart(id)}>
-            <ion-icon name="bag-outline"></ion-icon> Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
+            <IonIcon name="bag-outline"></IonIcon> Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
         </button>
       </div>
     </div>
