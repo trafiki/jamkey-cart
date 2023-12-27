@@ -29,7 +29,7 @@ While exploring this demo, you may come across several elements and buttons on t
 
 - **Price Slider**: A visual representation of a price slider for demonstration purposes.
 - **Login/Signup Buttons**: Buttons for login and signup are included to showcase the UI, but they are not connected to any authentication system.
-- **Footer Links**: All links on the footer are for demonstration purposes only
+- **Footer Links**: All links on the footer does not lead to any web page.
 
 Please focus on the key features mentioned above to interact with the fully functional aspects of the shopping cart. The additional demo elements are included for visual demonstration and aesthetics and are not integral to the core functionality.
 

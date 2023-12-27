@@ -4,21 +4,23 @@ import { CartItem } from "./CartItem";
 import "./cart.css";
 import { useNavigate } from "react-router-dom";
 import { PRODUCTS } from "../../products";
+import { thousandsSeparators } from "../../utils/helpers";
+import useLocalStorageState from "../../hooks/useLocalStorageState";
 
 
  
 export const Cart = () => {
   const {
     cartItems,
-    addToCart,
-    removeFromCart,
-    updateCartItemsCount,
     getTotalCartAmount,
     applyCoupon,
   } = useContext(ShopContext);
-  
+
+  const [couponCodeInStorage] = useLocalStorageState('couponCode')
   const [couponCode, setCouponCode] = useState('')
-  const [couponApplied, setCouponApplied] = useState(false)
+  const [couponApplied, setCouponApplied] = useState(() => {
+    return applyCoupon(couponCodeInStorage);
+  })
 
 
   const totalAmount = getTotalCartAmount();
@@ -29,7 +31,7 @@ export const Cart = () => {
     if (!applyCoupon(couponCode)) {
       alert('Invalid or expired coupon code!')
       setCouponCode('')
-      setCouponApplied(false)
+      // setCouponApplied(false)
     }else {
       setCouponApplied(true)
     }
@@ -45,10 +47,7 @@ export const Cart = () => {
               <CartItem
                 data={product}
                 id={product.id}
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
-                cartItems={cartItems}
-                updateCartItemsCount={updateCartItemsCount}
+                key={product.id}
               />
             );
           }
@@ -57,14 +56,15 @@ export const Cart = () => {
       {totalAmount > 0 ? (
         <div className="checkout">
           <div className="flex">
-           <p>Subtotal: ₦{totalAmount}</p> | 
+           <p>Subtotal: ₦{thousandsSeparators(totalAmount)}</p> | 
            <div className="coupon-section">
             {
               couponApplied ? (
                 <div className="flex">
-                  <p>Coupon {couponCode} applied</p> <small style={{cursor: 'pointer'}} onClick={() => {
+                  <p>Coupon {couponCodeInStorage} applied</p> <small style={{cursor: 'pointer'}} onClick={() => {
                     setCouponCode('')
                     setCouponApplied(false)
+                    applyCoupon('')
                   }}>x Remove</small>
                 </div>
                
