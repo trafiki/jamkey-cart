@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 import './product.css'
 import { IonIcon } from "@ionic/react";
+import { thousandsSeparators } from "../../utils/helpers";
 
 export type ProductT = {
   id: number,
@@ -22,7 +23,7 @@ export const Product = (props: any) => {
       <div className="product-info">
         <small className="product-category">{category}</small>
         <p className="product-name">{productName}</p>
-        <p className="product-price">₦{price}</p>
+        <p className="product-price">₦{thousandsSeparators(price)}</p>
       </div>
       <div className="add-to-cart-wrapper">
         <button className="add-to-cart" onClick={() => addToCart(id)}>

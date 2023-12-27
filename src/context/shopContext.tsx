@@ -5,14 +5,15 @@ import useLocalStorageState from "../hooks/useLocalStorageState";
 export const ShopContext = createContext<ShopContextT>({} as ShopContextT);
 
 type ShopContextT = {
-  cartItems: Record<number, number>,
-  addToCart: (itemId: number) => void,
-  removeFromCart: (itemId: number) => void,
-  updateCartItemsCount: (count: string, itemId: number) => void,
-  getTotalCartAmount: () => number,
-  getTotalCartCount: () => number,
-  applyCoupon: (couponCode: string) => boolean,
-  couponCode: string,
+  cartItems: Record<number, number>;
+  addToCart: (itemId: number) => void;
+  removeFromCart: (itemId: number) => void;
+  reduceProductCount: (itemId: number) => void;
+  updateCartItemsCount: (count: string, itemId: number) => void;
+  getTotalCartAmount: () => number;
+  getTotalCartCount: () => number;
+  applyCoupon: (couponCode: string) => boolean;
+  couponCode: string;
 }
 
 type ShopContextProviderProps = {
@@ -24,7 +25,6 @@ const getDefaultCart = () => {
   for (let i = 0; i < PRODUCTS.length; i++) {
     cart[PRODUCTS[i].id] = 0;
   }
-  console.log("DEFAULT CART", cart);
   return cart;
 };
 
@@ -57,6 +57,9 @@ export const ShopContextProvider = ({children}: ShopContextProviderProps) => {
   const addToCart = (itemId: number) => {
     setCartItems((prev: any) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
   };
+  const reduceProductCount = (itemId: number) => {
+    setCartItems((prev: any) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  };
   const removeFromCart = (itemId: number) => {
     setCartItems((prev: any) => ({ ...prev, [itemId]: 0}));
   };
@@ -77,7 +80,8 @@ export const ShopContextProvider = ({children}: ShopContextProviderProps) => {
     getTotalCartAmount,
     getTotalCartCount,
     applyCoupon,
-    couponCode
+    couponCode,
+    reduceProductCount
   };
 
   return (

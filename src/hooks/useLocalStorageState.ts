@@ -2,14 +2,14 @@ import React from "react"
 
 function useLocalStorageState(
     key: string,
-    defaultValue: any,
+    defaultValue?: any,
   ) {
     const [state, setState] = React.useState(() => {
       const valueInLocalStorage = window.localStorage.getItem(key)
       if (valueInLocalStorage) {
         return JSON.parse(valueInLocalStorage)
       }
-      return defaultValue
+      return defaultValue || ''
     })
   
     const prevKeyRef = React.useRef(key)
